@@ -1,0 +1,47 @@
+.nome_completo{
+  background-color: darkmagenta;
+}
+
+.email{
+  background-color: darkmagenta;
+}
+
+.data_nascimento{
+  background-color: mediumorchid;
+}
+
+.telefone{
+  background-color: mediumvioletred;
+}
+
+.sexo{
+  background-color: mediumorchid;
+}
+
+.logradouro{
+  background-color: blueviolet;
+}
+
+.numero{
+  background-color: mediumpurple;
+}
+
+.complemento{
+  background-color: magenta;
+}
+
+.bairro{
+  background-color: mediumvioletred;
+}
+
+.cidade{
+   background-color: blueviolet;
+}
+
+.estado{
+  background-color: magenta;
+}
+
+.senha{
+   background-color: darkmagenta;
+}

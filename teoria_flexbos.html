@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando Flexbox</title>
+    <!-- Importando o css  -->
+     <link rel="stylesheet" href="./estilo_flexbox.css">
+</head>
+<body>
+    <h1>Trabalhando com Divs</h1>
+    <!-- O header é um elemento tipo container  -->
+     <header style="background-color: crimson;">
+        <h2 style="background-color: beige;">Londres</h2>
+        <p>Londres é a capital da Inglaterra</p>
+        <p>Londres tem 13 milhões de habitantes</p>
+        <label for=""> O idioma falado é o inglês
+        </label>
+     </header>
+</body>
+</html>
+
+  <main>
+        <h2 style="background-color: darkgoldenrod;">Argentina</h2>
+        <p>Buenos Aires é a capital da Argentina</p>
+        <p>Argentina é racista</p>
+        <label for=""> O idioma falado é o espanhol
+        </label>
+  </main>
+</body>
+</html>
+
+  <section>
+        <h2 style="background-color: forestgreen;">Brasilia</h2>
+        <p>Brasilia é a capital do Brasil</p>
+        <p>Brasil é lindo</p>
+        <label for=""> O idioma falado é o português
+        </label>
+    </section>
+</body>
+</html>
+
+<h1>Trabalhando com Flexbox</h1>
+<p>Utilizando Flexbox para posicionar os elementos de uma linha ou coluna
+    de formaa mais dinamica
+</p>
+<p>Por padrão os elementos são exibidos em bloco</p>
+<section class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+</section>
+
+<p>Justify-content - Alinha nossos itens flex no container de acordo com a 
+    direção estabelecida</p>
+    <p>Alinhando a direita</p>
+    <section class="alinhar-direita">
+        <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+    </section>
+    <p>Alinhando ao centro</p>
+    <section class="alinhar-centro">
+        <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+    </section>
+
+    <p>Alinhando a esquerda</p>
+    <section class="alinhar-esquerda">
+        <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+    </section>
+
+    <p>Alinhando elementos com outras propriedades</p>
+    <P>Alinhar os elementos nos e ajusta o centro</P>
+    <section class="alinhar-entre">
+        <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+    </section>
+    <p>Alinhar ao redor</p>
+     <section class="alinhar-redor">
+        <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+    </section>
+    <p>Espaçamento usando colunas</p>
+    <section class="alinhar-coluna">
+        <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+    </section>
+
+    <p>Flex Mrap - Faz a quebra do elemento quando não há mais espaço
+        na tela
+        <section class="quebra-linha">
+        <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+         <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+         <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+         <img src="./img/hashirama.png" alt="" class="img-tamanho">
+        <img src="img/images.tresporquinhos.jpg" alt="" class="img-tamanho">
+        <img src="img/chapeuzinho_vermelho_meu_livro_favorito_185_1_735e8dd05f093c99dbfe2d00d8127fdb.webp" alt="" class="img-tamanho">
+    </section>
+    </p>
+
+    </body>
+

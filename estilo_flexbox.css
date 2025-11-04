@@ -1,0 +1,66 @@
+.div-1{
+    background-color: firebrick;
+}
+
+.div-2{
+    background-color: brown;
+}
+
+.item{
+
+}
+
+.container{
+    border: 2px solid black;
+    /* Limitar o tamanho do container  */
+    max-width: 400px;
+    margin: 0 auto;
+    /* possibilitar a flexibilização dos nossos elementos filhos  */
+    display: flex;
+}
+
+.img-tamanho{
+    width: 150px;
+    height: 150px;
+}
+
+.alinhar-direita{
+    display: flex;
+    justify-content: right;
+}
+
+.alinhar-centro{
+    display: flex;
+    justify-content: center;
+}
+
+.alinhar-esquerda{
+    display: flex;
+    justify-content: left;
+}
+
+.alinhar-entre{
+    display: flex;
+    /* aloca os elementos nas pontas e ajusta os elementos do centro  */
+    justify-content: space-between;
+}
+
+.alinhar-redor{
+    display: flex;
+    justify-content: space-around;
+}
+
+.alinhar-coluna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quebra-linha{
+    display: flex;
+    /* colocar espaços entre os elementos  */
+    gap: 10px;
+    /* quebrar os elementos para outra linha caso não  */
+    /* haja espaço suficiente  */
+    flex-wrap:wrap ;
+}

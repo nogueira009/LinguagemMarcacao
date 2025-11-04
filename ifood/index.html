@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFood - Delivery de Comida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        .cabecalho {
+            background-color: #EA1D2C;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .navegacao {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navegacao .item {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .navegacao .item:hover {
+            opacity: 0.8;
+        }
+
+        .buscar, .texto-local {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .buscar {
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .localizacao {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .acao {
+            display: flex;
+            gap: 10px;
+        }
+
+        .criar-conta, .botao-entrar {
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .criar-conta {
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+        }
+
+        .botao-entrar {
+            background-color: white;
+            color: #EA1D2C;
+            border: none;
+            cursor: pointer;
+        }
+
+        .criar-conta:hover, .botao-entrar:hover {
+            opacity: 0.9;
+        }
+
+        /* Modal */
+        .modal-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-container:target {
+            display: flex;
+        }
+
+        .modal-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-cabecalho h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #EA1D2C;
+        }
+
+        .fechar {
+            text-decoration: none;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .formulario .grupo-form {
+            margin-bottom: 15px;
+        }
+
+        .formulario label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .formulario input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .botao-criar {
+            width: 100%;
+            padding: 10px;
+            background-color: #EA1D2C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .botao-criar:hover {
+            background-color: #c41824;
+        }
+
+        .modal-rodape {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .modal-rodape a {
+            color: #EA1D2C;
+            text-decoration: none;
+        }
+
+        /* Seção de Produtos */
+        .secao-produtos {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .secao-produtos .card-produtos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            transition: transform 0.3s;
+        }
+
+        .secao-produtos .card-produtos:hover {
+            transform: translateY(-5px);
+        }
+
+        .secao-produtos .card-produtos img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 5px;
+        }
+
+        .secao-produtos .card-produtos p {
+            margin: 10px 0 0;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Seção de Restaurantes Famosos */
+        .container-famosos {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .famosos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .famosos h2 {
+            font-size: 24px;
+            color: #EA1D2C;
+        }
+
+        .famosos a {
+            color: #EA1D2C;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .secao-cards-famosos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card-loja {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card-loja:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-loja img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Seção de Promoções (Placeholder) */
+        .secao-promocoes {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .secao-promocoes h2 {
+            font-size: 24px;
+            color: #EA1D2C;
+            margin-bottom: 10px;
+        }
+
+        /* Rodapé */
+        .rodape-principal {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .rodape-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .coluna-rodape h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .coluna-rodape ul {
+            list-style: none;
+        }
+
+        .coluna-rodape ul li {
+            margin-bottom: 10px;
+        }
+
+        .coluna-rodape ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .coluna-rodape ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .icones-sociais {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icones-sociais a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            background-color: #EA1D2C;
+            border-radius: 5px;
+        }
+
+        .icones-sociais a:hover {
+            background-color: #c41824;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navegacao {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .buscar {
+                width: 100%;
+            }
+
+            .acao {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .criar-conta, .botao-entrar {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <img src="https://logopng.com.br/logos/ifood-43.png" class="logo" alt="iFood Logo">
+            <nav class="navegacao">
+                <a href="#" class="item">Restaurante</a>
+                <a href="#" class="item">Mercado</a>
+                <a href="#" class="item">Bebidas</a>
+                <a href="#" class="item">Farmácia</a>
+                <a href="#" class="item">Pet-shop</a>
+            </nav>
+            <div>
+                <input type="text" placeholder="Busque por item ou loja" class="buscar">
+                <div class="localizacao">
+                    <span>📍</span>
+                    <input type="text" value="Andradina, SP" class="texto-local">
+                </div>
+            </div>
+            <div class="acao">
+                <a href="#modal-cadastro" class="criar-conta">Criar Conta</a>
+                <button class="botao-entrar">Entrar</button>
+            </div>
+        </div>
+
+        <!-- Modal Criar Conta -->
+        <div id="modal-cadastro" class="modal-container">
+            <div class="modal-box">
+                <div class="modal-cabecalho">
+                    <h2>Criar Conta</h2>
+                    <a href="#" class="fechar">&times;</a>
+                </div>
+                <form action="" class="formulario">
+                    <div class="grupo-form">
+                        <label for="nome">Nome Completo</label>
+                        <input id="nome" type="text" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="joaodasneves@ifoood.com" required>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" placeholder="Crie uma senha forte" required>
+                    </div>
+                    <button type="submit" class="botao-criar">Criar Conta</button>
+                </form>
+                <div class="modal-rodape">
+                    <p>Já tem conta? <a href="#">Entrar</a></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-produtos">
+            <div class="secao-cards-famosos">
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+                <div class="card-produtos">
+                    <img src="./img/comida.webp" alt="Almoço">
+                    <p>Almoço</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-famosos">
+            <div class="famosos">
+                <h2>Restaurantes Famosos</h2>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="secao-cards-famosos">
+                <div class="card-loja">
+                    <img src="data:image/jpeg;base64,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" alt="Restaurante Famoso">
+                </div>
+                <div class="card-loja">
+                    <img src="data:image/png;base64,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" alt="Restaurante Famoso">
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-promocoes">
+            <h2>Promoções</h2>
+            <p>Confira as melhores ofertas do dia!</p>
+        </section>
+    </main>
+
+    <footer class="rodape-principal">
+        <div class="rodape-container">
+            <div class="coluna-rodape">
+                <h3>iFood</h3>
+                <ul>
+                    <li><a href="#">Site Institucional</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">iFood Shop</a></li>
+                </ul>
+            </div>
+            <div class="coluna-rodape">
+                <h3>Descubra</h3>
+                <ul>
+                    <li><a href="#">Cadastre seu restaurante</a></li>
+                    <li><a href="#">iFood para Entregadores</a></li>
+                    <li><a href="#">Blog iFood</a></li>
+                </ul>
+            </div>
+            <div class="coluna-rodape">
+                <h3>Social</h3>
+                <div class="icones-sociais">
+                    <a href="#">FB</a>
+                    <a href="#">TW</a>
+                    <a href="#">IG</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

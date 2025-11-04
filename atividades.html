@@ -1,15 +1,119 @@
-<DOCTYPE html>
-    <html lang="pt-br">
-        </head>
-             <meta charset="UTF-8">
-            <meta name="viewport" content="widht=], initial-scale=1.0">
-            <title>Atividades</title>
-        </head>
-        <body>
-            <h1>Atividades realizadas</h1>
-            <a href="./atividades/exe01.html">Exe01</a>
-            <a href="./atividades/exe02.html">Exe02</a>
-            <a href="./atividades/exe03_receitas.html">Exe03</a>
-            <a href="./atividade/exe04.html">exe04</a>
-        <body>
-        </html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividades</title>
+
+  <style>
+    /* ====== Estilo embutido ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a1a, #333);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #f0db4f; /* Cor estilo JavaScript */
+    }
+
+    main.principal {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    main a {
+      background: #222;
+      color: #f0f0f0;
+      text-decoration: none;
+      text-align: center;
+      padding: 1rem 0.5rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+      font-weight: 500;
+    }
+
+    main a:hover {
+      background: #f0db4f;
+      color: #222;
+      transform: scale(1.05);
+      border-color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: #f0db4f;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      main.principal {
+        padding: 1rem;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      main a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🌟 Atividades Realizadas</h1>
+  </header>
+
+  <main class="principal">
+    <a href="./atividades/exe01.html">Exercício 01</a>
+    <a href="./atividades/exe02.html">Exercício 02</a>
+    <a href="./atividades/exe03_receitas.html">Receitas</a>
+    <a href="./atividades/exe04.html">Exercício 4</a>
+    <a href="./atividades/cards.html">Pokémon</a>
+    <a href="./paito_motors/index.html">Paito Motors</a>
+    <a href="./ifood/index.html">iFood</a>
+    <a href="./atividades/ativ_resp.html">Responsividade</a>
+    <a href="./atividades/grid-card.html">Grid Card</a>
+    <a href="./javascript/exercícios/exe_01.html">JavaScript exercício 1</a>
+    <a href="./javascript/exercícios/exe_02.html">JavaScript exercício 2</a>
+    <a href="./javascript/exercícios/exe_03.html">JavaScript exercício 3</a>
+  </main>
+
+  <footer>
+    <p>Feito com 💻 por <strong>Gabriel</strong></p>
+  </footer>
+</body>
+</html>

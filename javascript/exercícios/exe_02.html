@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <!-- importar tailwind  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+        <h1 class="text-3-xl font-bold text-gray-800 mb-6 text-center">Operações</h1>
+        <div class="space-y-6">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="somar()" class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out">Somar</button>
+                <button onclick="subtrair()" class="w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition duration-200 ease-in-out">subtrair</button>
+                <button onclick="multiplicar()" class="w-full bg-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200 ease-in-out">multiplicar</button>
+                <button onclick="dividir()" class="w-full bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-200 ease-in-out">dividir</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function somar(){
+            var n1 = Number(prompt('Digite um numero: '))
+            var n2 = Number(prompt('Digite um numero: '))
+
+            console.log(`Soma: ${n1 + n2}`)
+            alert(`Soma: ${n1 + n2}`)
+        }
+
+        function subtrair(){
+            var n1 = Number(prompt('Digite um numero:'))
+            var n2 = Number(prompt('Digite um numero:'))
+
+            console.log(`Subtracao: ${n1 - n2}`)
+            alert(`Subtracao: ${n1 - n2}`)
+        }
+
+        function multiplicar(){
+            var n1 = Number(prompt('Digite um numero: '))
+            var n2 = Number(prompt('Digite um numero: '))
+
+            console.log(`Multiplicacao: ${n1 * n2}`)
+            alert(`Multiplicacao: ${n1 * n2}`)
+        }
+
+        function dividir(){
+            var n1 = Number(prompt('Digite um numero: '))
+            var n2 = Number(prompt('Digite um numero: '))
+
+            console.log(`Divisao: ${n1 / n2}`)
+            alert(`Divisao: ${n1 / n2}`)
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+.email{
+  background-color: rgb(0, 255, 166);  
+}
+
+.senha{
+  background-color: rgb(0, 255, 166); ;
+}
+
+.nome_completo{
+  background-color: darkmagenta;
+}
+
+.email{
+  background-color: darkmagenta;
+}
+
+.data_nascimento{
+  background-color: mediumorchid;
+}
+
+.telefone{
+  background-color: mediumvioletred;
+}
+
+.sexo{
+  background-color: mediumorchid;
+}
+
+.logradouro{
+  background-color: blueviolet;
+}
+
+.numero{
+  background-color: mediumpurple;
+}
+
+.complemento{
+  background-color: magenta;
+}
+
+.bairro{
+  background-color: mediumvioletred;
+}
+
+.cidade{
+   background-color: blueviolet;
+}
+
+.estado{
+  background-color: magenta;
+}
+
+.senha{
+   background-color: darkmagenta;
+}
+
+.modelo{
+  background-color: cornflowerblue;
+}
+
+.marca{
+  background-color: darkturquoise;
+}
+
+.processador{
+  background-color: dodgerblue;
+}
+
+.memoria{
+  background-color: blue;
+}
+
+.armazenamento{
+  background-color: darkcyan;
+}
+
+.tela{
+  background-color: deepskyblue;
+}
+
+.sistema_operacional{
+  background-color: midnightblue;
+}

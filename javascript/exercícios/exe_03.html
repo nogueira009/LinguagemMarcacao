@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+    <!-- importar tailwind  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+        <div>
+            <div class="space-y-3">
+                <input type="text" id="input-base" placeholder="Digite o valor da base" class="w-ful border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">
+                <input type="text" id="input-altura" placeholder="Digite o valor da altura" class="w-ful border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">
+                <button onclick="area()" class="w-full bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-200 ease-in-out">Valor area</button>
+                <p id="resultadoArea" class="bg-gray-100 p-4 rounded-md text-gray-700 min-h-[50px] border-gray-200"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function area(){
+            var base = document.getElementById("input-base").value
+            var altura = document.getElementById("input-altura").value
+
+            var area = base * altura / 2;
+            document.getElementById("resultadoArea").innerHTML = `A area é igual a: ${area}`
+        }
+    </script>
+</body>
+</html>

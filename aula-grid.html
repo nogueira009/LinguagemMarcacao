@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula sobre Grid Layout</title>
+
+    <!-- importar tailwind  -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="container mx-auto p-4">
+    <!-- Dar espaço entre as seções  -->
+    <div class="space-y-12">
+        <section>
+        <!-- Grid Básico  -->
+         <h2 class="text-4xl font-bold mb-4">Grid Básico</h2>
+          
+         <!-- grid de 12 colunas  -->
+         <div class="grid grid-cols-12 text-2xl text-white text-center">
+            <div class="bg-blue-500 p-2">1</div>
+            <div class="bg-red-500 p-2">2</div>
+            <div class="bg-pink-500 p-2">3</div>
+            <div class="bg-purple-500 p-2">4</div>
+            <div class="bg-pink-700 p-2">5</div>
+            <div class="bg-gray-500 p-2">6</div>
+            <div class="bg-cyan-500 p-2">7</div>
+            <div class="bg-orange-500 p-2">8</div>
+            <div class="bg-green-500 p-2">9</div>
+            <div class="bg-red-800 p-2">10</div>
+            <div class="bg-blue-700 p-2">11</div>
+            <div class="bg-gray-700 p-2">12</div>
+         </div>
+         <div class="grid grid-cols-12 gap-2 mt-4 text-2xl text-white text-center">
+            <div class="col-span-1 bg-blue-500">1</div>
+            <div class="col-span-2 bg-red-500">2</div>
+            <div class="col-span-4 bg-yellow-500">3</div>
+            <div class="col-span-5 bg-purple-500">4</div>
+         </div>
+      </section>
+
+      <section>
+        <h2 class="text-4xl font-bold mb-4">Grid Responsivo</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-12">
+            <div class="bg-blue-500 p-2">1</div>
+            <div class="bg-red-500 p-2">2</div>
+            <div class="bg-pink-500 p-2">3</div>
+            <div class="bg-purple-500 p-2">4</div>
+            <div class="bg-pink-700 p-2">5</div>
+            <div class="bg-gray-500 p-2">6</div>
+            <div class="bg-cyan-500 p-2">7</div>
+            <div class="bg-orange-500 p-2">8</div>
+            <div class="bg-green-500 p-2">9</div>
+            <div class="bg-red-800 p-2">10</div>
+            <div class="bg-blue-700 p-2">11</div>
+            <div class="bg-gray-700 p-2">12</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-4xl font-bold mb-4">Quebra de linha </h2>
+
+       <div class="grid grid-cols-4 text-2xl text-center">
+        <div class="bg-violet-500">1</div>
+        <div class="bg-orange-500">2</div>
+        <!-- row-start posiciona o elemento na linha que voce determinar  -->
+         <!-- row-col posiciona o elemento na linha que voce determinar  -->
+        <div class="row-start-2 col-start-4 bg-gray-500">3</div>
+      </div>
+      </section>
+
+      <section>
+        <h2 class="text-4xl font-bold mb-4">Ordem com grid</h2>
+
+       <div class="grid grid-cols-3 text-2xl text-center">
+        <div class="order-3 bg-violet-500">1</div>
+        <div class="order-2 bg-orange-500">2</div>
+        <div class="order-1 bg-gray-500">3</div>
+      </div>
+      </section>
+
+      <section>
+        <h2 class="text-4xl font-bold mb-4">Tamanho e posição</h2>
+
+       <div class="grid grid-cols-12 text-2xl text-center">
+        <div class="col-span-1 col-start-12 bg-violet-500">1</div>
+        <div class="col-span-4 col-start-4 bg-orange-500">2</div>
+        <div class="col-span-6 col-start-2 bg-gray-500">3</div>
+      </div>
+      </section>
+
+      <section>
+        <h2 class="text-4xl font-bold mb-4">Alinhamento grids</h2>
+
+       <div class="grid grid-cols-3,s h-[300px] bg-gray-300 text-2xl text-center">
+        <div class="self-end bg-violet-500">1 - Fim</div>
+        <div class="self-center bg-orange-500">2 - Centro</div>
+        <div class="self-start bg-gray-500">3 - Começo</div>
+      </div>
+      </section>
+    </div>
+</body>
+</html>

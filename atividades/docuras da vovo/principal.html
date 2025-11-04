@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doçuras da Vovó</title>
+    <!-- importar tailwind  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script defer src="./script.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-pink-600">Doçuras da Vovó</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="" class="text-gray-400 hover:text-black"> 🏠Principal</a>
+                <a href="" class="text-gray-400 hover:text-black">⭐Favoritos</a>
+                <a href="" class="text-gray-400 hover:text-black">💳Promoções</a>
+            </div>
+                <div class="relative">
+                    <!-- Menu  -->
+                    <button id="gatilho-dropdown-web" class="flex items-center text-gray-400 hover:text-black">
+                        Minha Conta
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="menu-dropdown-web" class="hidden absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                        <a href="" class="block px-4 py-2 text-sm text-gray-400 hover:bg-blue-50">Meus pedidos</a>
+                        <a href="" class="block px-4 py-2 text-sm text-gray-400 hover:bg-blue-50">Configurações</a>
+                        <a href="" class="block px-4 py-2 text-sm text-gray-400 hover:bg-blue-50">Sair</a>
+                    </div>
+                </div>
+            <button id="btn-hamburguer" class="md:hidden text-gray-600 focus:outline-none">
+                <!-- Menu Hamburguer  -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Menu Mobile  -->
+        <div id="menu-mobile" class="hidden md:hidden bg-white shadow-lg">
+            <div>
+                <button id="gatilho-dropdown-mobile" class="w-full flex items-center justify-between text-gray-400 hover:text-blue-50 text-left px-6 py-3">
+                    Doçuras da Vovó
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="menu-dropdown-mobile" class="hidden pl-8">
+                    <a href="" class="block px-4 py-2 text-sm text-gray-400 hover:bg-blue-50">Meus pedidos</a>
+                    <a href="" class="block px-4 py-2 text-sm text-gray-400 hover:bg-blue-50">Configurações</a>
+                    <a href="" class="block px-4 py-2 text-sm text-gray-400 hover:bg-blue-50">Sair</a>
+                </div>
+            </div>
+                <a href="" class="text-gray-400 hover:text-blue-600">Pacotes</a>
+                <a href="" class="text-gray-400 hover:text-blue-600">Sobre</a>
+                <a href="" class="text-gray-400 hover:text-blue-600">Contato</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8">
+        <section class="relative w-full max=w-4xl mx-auto rounded-lg shadow-xl">
+            <div id="carrossel-container" class="overflow-hidden rounded-lg">
+                <div id="carrossel-slides" class="flex transition-transform duration-500 ease-in-out h-[60vh]">
+                    <div style="background-image: url(https://www.estadao.com.br/resizer/oFDrDp3xgfze9zuyNaR5gnyURVA=/arc-anglerfish-arc2-prod-estadao/public/FIVYQFU6J5ND3PYRA6XQHR4NW4.jpg); background-size: cover;" class="slide-carrossel min-w-full text-white flex items-center justify-center">
+                        <h2 class="text-4xl font-bold"></h2>
+                    </div>
+                     <div style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8Kf5KNpd5H6d-gmAYmURIieGxpeZdxK4gQSxBdx26PyniiEz2LNnHjMggcyBuXtC_rnS8WVOAvI0jfgk0pLxQZnsiJFm0wjaLGGIEi4A08hPy-HcXjwF9kdY9IiP10iMjlp7zVK1GSOd50e78yI0H86xKEON-rYU3m9TjyMjAsQSviq1IRj7cvWES-F0/s2000/receita-de-mousse-de-maracuja-facil-3.jpg); background-size: cover;" class="slide-carrossel min-w-full bg-green-500 text-white flex items-center justify-center">
+                        <h2 class="text-4xl font-bold"></h2>
+                    </div>
+                     <div style="background-image: url(https://cdn.urbano.com.br/uploads/sonho-sem-glu-ten-800.jpg); background-size: cover;" class="slide-carrossel min-w-full bg-yellow-500 text-white flex items-center justify-center">
+                        <h2 class="text-4xl font-bold"></h2>
+                    </div>
+                </div>
+            </div>
+            <button id="btn-anterior" class="absolute top-1/2 left-4 bg-white/50 hover:bg-white p-2 rounded-full shadow-translate-y-1/2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button id="btn-proximo" class="absolute top-1/2 right-4 bg-white/50 hover:bg-white p-2 rounded-full shadow-translate-y-1/2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+        </section>
+    </main>
+    <main class="text-center">
+        <h1 class="font-semibold text-4xl mx-auto px-10 py-8">Recomendados</h1>
+        <h3 class="font-sm text-gray-400">Aproveite nossos melhores produtos</h3>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex mb-8">
+            <div class="p-8 w-1/2 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold text-pink-600 mb-4">Tiramisu</h2>
+                <p class="text-gray-600 mb-6">É uma sobremesa italiana clássica feita com camadas de biscoitos tipo savoiardi (ou "champanhe") embebidos em café, alternadas com um creme aveludado de ovos, açúcar e queijo mascarpone</p>
+                <button class="bg-pink-600 text-white px-6 py-2 rounded-md w-fit">Saiba Mais</button>
+            </div>
+            <div class="w-1/2">
+                <img src="/img/tiramisu.png">
+            </div>
+        </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex mb-8">
+                 <div class="w-1/2">
+                <img src="/img/bolo.png">
+            </div>
+            <div class="p-8 w-1/2 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold text-pink-600 mb-4">Pudim de Chia</h2>
+                <p class="text-gray-600 mb-6">O pudim de chia é uma sobremesa ou lanche nutritivo e saudável, conhecido pela sua textura única em gel e versatilidade.</p>
+                <button class="bg-pink-600 text-white px-6 py-2 rounded-md w-fit">Saiba Mais</button>
+            </div>
+        </div>
+        <!-- criar modal aqui -->
+    </main>
+    <footer class="bg-gray-200 py-8">
+    <div class="max-w-5xl mx-auto px-5 flex justify-between">
+        <div>
+            <h3 class="text-pink-600 font-bold mb-4">Contato</h3>
+            <ul class="list-none text-grat-600 text-sm">
+                <li class="mb-2">● Rua das Flores, 123</li>
+                <li class="mb-2">☎ (18) 99762-9947</li>
+                <li>✉ nogueiraa0302.com</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-pink-600 font-bold mb-4">Siga-nos</h3>
+            <div class="flex gap-4">
+                <img src="/img/instagram.png" class="h-6 w-6 rounded-full bg-gray-300">
+                <img src="/img/zapzap.png" class="h-6 w-6 rounded-full bg-gray-300">
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-8 text-gray-500 text-sm border-t border-gray-300 pt-4 max-w-5xl mx-auto">
+        © 2024 - Doçuras da Vovó. Todos os direitos reservados.
+    </div>
+</footer>
+
+</body>
+
+</html>

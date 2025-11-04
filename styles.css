@@ -1,4 +1,116 @@
 /* seletor universal */
-*{
-  
+* {
+    /* Zera a margem do documento */
+    margin: 0;
+    /* Gera um espaçamento interno */
+    padding: 0;
+}
+
+/* Seletor de tipo, aplica o css em uma tag */
+h5{
+    /* O tributo important prioriza o elemento em relação a outro */
+    color: blueviolet !important;
+}
+
+/* Seletor de classe */
+.titulo{
+    background-color: chocolate;
+    color: aqua;
+    /* aplica margem em todas as laterais */
+    /* margin: 10px; */
+    /* margin-left: 20px; */
+    /* Aplico o espaçamento no superiror e inferior */
+    /* e aplico tambem nas laterais esquerda e direita */
+    /* margin: 20px 0; */
+    margin: 0 10px 0 0;
+    /* Aplicando espaçamento interno */
+    /* padding: 10px; */
+    padding: 0 10px;
+}
+
+p{
+    background-color: brown;
+}
+
+.imagem{
+    /* Aplicando tamanho em largura */
+    width: 200px;
+    /* aplicando tamanho em altura */
+    height: 200px;
+}
+
+.formulario{
+    background-color: darkgrey;
+    width: 400px;
+    margin: 0 auto;
+    /* Alinha o conteudo interno , centraliza */
+    text-align: center;
+}
+
+.input-nome{
+    /* Remover as bordas */
+    border: none;
+    /* Aplica curvatura no canto das bordas */
+    border-radius: 2px;
+    margin-left: 10px;
+    /* definir opacidade no campo texto */
+    opacity: 70%;
+}
+.botao{
+    background-color: aquamarine;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    /* Aplicando sombra no texto posição x, y blur */
+    text-shadow: 5px 2px 5px rgba(212,14,57, 0.9) ;
+    margin-left: 50px;
+}
+
+.checar{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    /* Modifica o tipo do cursor */
+    cursor: pointer;
+    /* Limpar configurações aparencia */
+    appearance: none;
+    background-color: #fff;
+    border: 2px dashed #4caf50;
+    border-radius: 5px;
+}
+.checar:checked{
+    background-color: #4caf50;
+}
+
+.email{
+    width: 300px;
+    padding: 5px;
+    margin-left: 5px;
+    border: 2px solid white;
+}
+.selecao{
+    appearance: none;
+    width: 300px;
+    padding: 4px;
+    font-size: 16px;
+    color: #4a3f3f;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    /* Sombra no input */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+.radio{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d3421d;
+    border-radius: 50%;
+}
+/* Pseudoclasse, quando o estado do objeto mudar ele atribui outras propriedades */
+.radio:checked{
+    background-color: #d3421d;
+    border-color: #50d31d;
 }

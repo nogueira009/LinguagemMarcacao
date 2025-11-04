@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudando cor de fundo</title>
+    <!-- importar tailwind  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <h1>Alterando cor de fundo</h1>
+    <button onclick="btnVermelho()" class="w-50 bg-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200 ease-in-out">Vermelho</button>
+    <button onclick="bntVerde()" class="w-50 bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition duration-200 ease-in-out">Verde</button>
+    <button onclick="bntAmarelo()" class="w-50 bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-200 ease-in-out">Amarelo</button>
+    
+    <script>
+       function btnVermelho(){
+        //acesso o documento e altero o body da minha pagina
+        document.body.style.background = "red";
+       }
+
+       function bntVerde(){
+        document.body.style.background = "green";
+       }
+
+       function bntAmarelo(){
+        document.body.style.background = "yellow"
+       }
+    </script>
+</body>
+</html>

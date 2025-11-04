@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar Eletronico</title>
+    <!-- importar tailwind  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="./script.js"></script>
+</head>
+
+<body class="bg-gray-800 text-white flex flex-col items-center justify-center p-4">
+    <header class="mb-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-400">Placar Eletronico</h1>
+    </header>
+
+    <section class="bg-gray-800 text-white flex rounded-lg shadow-2xl items-center justify-around space-x-16 p-4">
+        <div class="text-center flex flex-col items-center">
+            <p class="text-2xl font-semibold mb-2">Casa</p>
+            <p id="pt1" class="text-6xl font-bold text-yellow-400 mb-4">0</p>
+            <button onclick="ponto1()" class="bg-blue-500 text-white rounded-lg p-3">Gol</button>
+            <button onclick="anular1()" class="bg-blue-500 text-white rounded-lg p-3">Anular</button>
+        </div>
+        <div class="text-center flex flex-col items-center">
+            <p class="text-2xl font-semibold mb-2">Visitante</p>
+            <p id="pt2" class="text-6xl font-bold text-yellow-400 mb-4">0</p>
+            <button onclick="ponto2()" class="bg-blue-500 text-white rounded-lg p-3">Gol</button>
+            <button onclick="anular2()" class="bg-blue-500 text-white rounded-lg p-3">Anular</button>
+        </div>
+    </section>
+    <div class="text-center flex flex-col items-center">
+        <p class="text-2xl font-semibold mb-2">Resetar</p>
+        <button onclick="resetar()" class="bg-blue-500 text-white rounded-lg p-3">reset</button>
+
+
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-400">Placar Eletronico - Basquete</h1>
+        <section class="bg-gray-800 text-white flex rounded-lg shadow-2xl items-center justify-around space-x-16 p-4">
+            <div class="text-center flex flex-col items-center">
+                <p class="text-2xl font-semibold mb-2">Casa</p>
+                <p id="p3" class="text-6xl font-bold text-yellow-400 mb-4">0</p>
+                <button onclick="basquete1()" class="bg-blue-500 text-white rounded-lg p-3">Pontos</button>
+                 <div>
+                    <button onclick="basquete1(1)" class="bg-blue-500 text-white rounded-lg p-3">+1</button>
+                    <button onclick="basquete1(2)" class="bg-blue-500 text-white rounded-lg p-3">+2</button>
+                    <button onclick="basquete1(3)" class="bg-blue-500 text-white rounded-lg p-3">+3</button>
+                </div>
+            </div>
+            <div class="text-center flex flex-col items-center">
+                <p class="text-2xl font-semibold mb-2">Visitante</p>
+                <p id="p4" class="text-6xl font-bold text-yellow-400 mb-4">0</p>
+                <button onclick="basquete2()" class="bg-blue-500 text-white rounded-lg p-3">Pontos</button>
+                <div>
+                    <button onclick="basquete2(1)" class="bg-blue-500 text-white rounded-lg p-3">+1</button>
+                    <button onclick="basquete2(2)" class="bg-blue-500 text-white rounded-lg p-3">+2</button>
+                    <button onclick="basquete2(3)" class="bg-blue-500 text-white rounded-lg p-3">+3</button>
+                </div>
+            </div>
+        </section>
+</body>
+
+</html>
